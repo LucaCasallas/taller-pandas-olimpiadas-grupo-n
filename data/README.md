@@ -1,5 +1,3 @@
-¿Cómo descargar los datasets?...
-
 # Datos
 Los archivos originales **no se suben al repositorio** (están en `.gitignore`).
 
