@@ -6,4 +6,3 @@ import pandas as pd
 
 atletas = pd.read_csv('data/athlete_events.csv')
 print(atletas.tail())
-
