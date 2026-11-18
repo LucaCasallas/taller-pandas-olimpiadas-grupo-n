@@ -1,0 +1,15 @@
+df_fusion['grupo_etario'] = 'Jóvenes adultos'
+df_fusion.loc[df_fusion['Age'] < 18, 'grupo_etario'] = 'Menores'
+df_fusion.loc[df_fusion['Age'] >= 35, 'grupo_etario'] = 'Mayores'
+df_fusion.loc[df_fusion['Age'].isna(), 'grupo_etario'] = None
+df_fusion['Registro_fisico'] = 'Con estatura y peso'
+df_fusion.loc[df_fusion['Height'].isna() | df_fusion['Weight'].isna(), 'Registro_fisico'] = 'Sin estatura o peso'
+
+df_fusion['Resultado'] = 'Sin medalla'
+df_fusion.loc[df_fusion['Medalla'] == 1, 'Resultado'] = 'Con medalla'
+
+conteos = df_fusion.groupby(['Sex', 'grupo_etario', 'Registro_fisico', 'Resultado'])['ID'].count()
+proporcion = conteos / df_fusion.groupby(['Sex', 'grupo_etario'])['ID'].count()
+porcentaje = (proporcion * 100).round(2)
+
+print(porcentaje)
