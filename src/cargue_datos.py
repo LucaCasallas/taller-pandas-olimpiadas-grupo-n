@@ -6,3 +6,6 @@ import pandas as pd
 
 atletas = pd.read_csv('data/athlete_events.csv')
 print(atletas.tail())
+
+regiones = pd.read_csv('data/country_definitions.csv', sep=';')
+print(regiones)
