@@ -96,3 +96,28 @@ plt.ylabel("Medallas / participaciones")
 # 6. Guardar (antes de mostrar) y mostrar
 plt.savefig("g04_tasa_sexo.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+# --- GRAFICA #5 ---
+
+# 1. Tasa de medalla por temporada (Summer / Winter)
+#    mean() sobre una variable 0/1 = proporción de registros con medalla
+tasa_temporada = df_fusion.groupby("Season")["Medalla"].mean().reset_index()
+
+# 2. Lienzo pequeño (solo 2 barras)
+plt.figure(figsize=(5, 4))
+
+# 3. Una barra por temporada
+ax = sns.barplot(data=tasa_temporada, x="Season", y="Medalla")
+
+# 4. Porcentaje encima de cada barra
+etiquetas = [f"{v*100:.1f}%" for v in tasa_temporada["Medalla"]]
+ax.bar_label(ax.containers[0], labels=etiquetas)
+
+# 5. Títulos y ejes
+plt.title("Tasa de medalla por temporada")
+plt.ylabel("Medallas / participaciones")
+
+# 6. Guardar (antes de mostrar) y mostrar
+plt.savefig("g05_tasa_temporada.png", dpi=150, bbox_inches="tight")
+plt.show()
+
