@@ -3,9 +3,9 @@
 En este proyecto, se analizan los datos históricos de los Juegos Olímpicos.
 ###  Integrantes: Jerónimo Casallas, Ian García, Sebastián Martinez
 ### Roles :
-  * Líder de Repositorio: Jerónimo Casallas
+  * Líder de Repositorio: Ian García
   * Lıder de Datos: Sebastián Martinez
-  * Lıder de Reporte: Ian García  
+  * Lıder de Reporte: Jerónimo Casallas
   
 ## 1. Objetivo general:
    Analizar con Pandas el conjuntos de datos de los Juegos Olimpicos de 1896 a 2016 (271,116 registros, cada fila es un atleta en una prueba, no atleta unico) para describir la participacion, medir cuantas medallas ganaron    entre distintos grupos, en conteo y proporcion. Identificacion de datos faltantes y porque y discutir que caracteristicas se asocian con una mayor probabilidad de ganar una medalla.
