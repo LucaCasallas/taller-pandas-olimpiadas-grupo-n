@@ -121,3 +121,31 @@ plt.ylabel("Medallas / participaciones")
 plt.savefig("g05_tasa_temporada.png", dpi=150, bbox_inches="tight")
 plt.show()
 
+# --- GRAFICA 6 ---
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Variables a revisar y etiqueta de época para cada fila
+columnas = ["Age", "Height", "Weight", "IMC"]
+periodo = np.where(df_fusion["Year"] < 1960, "Antes de 1960", "1960 o después")
+
+# 2. Proporción de faltantes por época y variable
+#    .T = transponer: las variables quedan en filas y las épocas en columnas
+falt = df_fusion[columnas].isna().groupby(periodo).mean().T
+print(falt)
+# 3. Barras agrupadas (una variable en x, una barra por época)
+ax = falt.plot(kind="bar", color=["#c44e52", "#4c72b0"], figsize=(7.5, 4.2), rot=0)
+
+# 4. Porcentaje encima de cada barra
+for c in ax.containers:
+    ax.bar_label(c, labels=[f"{v*100:.1f}%" for v in c.datavalues], fontsize=8)
+
+# 5. Títulos y ejes
+ax.set_title("Proporción de datos faltantes según el periodo")
+ax.set_ylabel("Proporción de faltantes")
+ax.legend(title="Periodo")
+
+# 6. Guardar (antes de mostrar) y mostrar
+plt.savefig("g08_faltantes_periodo.png", dpi=150, bbox_inches="tight")
+plt.show()
