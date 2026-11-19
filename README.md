@@ -4,16 +4,16 @@ En este proyecto, se analizan los datos históricos de los Juegos Olímpicos.
 ###  Integrantes: Jerónimo Casallas, Ian García, Sebastián Martinez
 ### Roles :
   * Líder de Repositorio: Jerónimo Casallas 
-  * Lıder de Datos: Ian García
-  * Lıder de Reporte: Sebastián Martinez
+  * Líder de Datos: Ian García
+  * Líder de Reporte: Sebastián Martinez
   
-## 1. Objetivo general:
-   Analizar con Pandas el conjuntos de datos de los Juegos Olimpicos de 1896 a 2016 (271,116 registros, cada fila es un atleta en una prueba, no atleta unico) para describir la participacion, medir cuantas medallas ganaron    entre distintos grupos, en conteo y proporcion. Identificacion de datos faltantes y porque y discutir que caracteristicas se asocian con una mayor probabilidad de ganar una medalla.
+## 1.1. Objetivo general:
+   Analizar con Pandas el conjunto de datos de los Juegos Olímpicos de 1896 a 2016 para describir la participación, medir cuantas medallas ganaron entre distintos grupos en cuanto a cantidad y proporción, y discutir que características se asocian con una mayor probabilidad de ganar una medalla.
 
 ## 1.2. Metodologia:
-   1) Se cargaron los archivos athlete events.csv y noc regions.csv en dataframes separados y se unieron por NOC con una union left(sin cambiar el numero de filas)
-   2) Se crearon las variables IMC, madalla(1 si Medal tiene valor), grupo etario, n_prueba y grupo de participacion.
-   3) Las comparaciones entre grupos se hacen conteos y con tasas
+   1) Se cargaron los archivos athlete_events.csv y noc_regions.csv en dataframes separados y se unieron por NOC con una unión left (sin cambiar el número de filas).
+   2) Se crearon las variables IMC, medalla, grupo etario, n_prueba y grupo de participación.
+   3) Las comparaciones entre grupos se hacen conteos y proporciones.
 
   2) Descripción de variables de la base de datos
 ## 2. Descripción de las variables
