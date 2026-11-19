@@ -20,3 +20,32 @@ plt.xlabel("IMC (kg/m²)")
 # 4. Guardar y mostrar
 plt.savefig("g01_imc_sexo.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+# --- GRAFICA #2 --- 
+
+# Requiere haber corrido antes el gráfico 1 (ahí se crea d, con IMC entre 12 y 50)
+
+# 1. Elegir los deportes a comparar (10 con cuerpos muy distintos)
+deportes = ["Gymnastics", "Athletics", "Swimming", "Football", "Basketball",
+            "Rowing", "Judo", "Boxing", "Wrestling", "Weightlifting"]
+
+# 2. Quedarnos solo con las filas de esos deportes
+df_IMC_deportes = df_IMC[df_IMC["Sport"].isin(deportes)]
+
+# 3. Calcular el orden: deportes de menor a mayor mediana de IMC
+orden = df_IMC_deportes.groupby("Sport")["IMC"].median().sort_values().index
+
+# 4. Crear el lienzo
+plt.figure(figsize=(9, 5))
+
+# 5. Dibujar un boxplot horizontal por deporte, en el orden calculado
+sns.boxplot(data=df_IMC_deportes, x="IMC", y="Sport", order=orden)
+
+# 6. Títulos y ejes
+plt.title("IMC por deporte")
+plt.xlabel("IMC (kg/m²)")
+plt.ylabel("")  # los nombres de los deportes ya se explican solos
+
+# 7. Guardar (antes de mostrar) y mostrar
+plt.savefig("g02_imc_deporte.png", dpi=150, bbox_inches="tight")
+plt.show()
