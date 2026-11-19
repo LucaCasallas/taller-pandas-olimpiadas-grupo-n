@@ -49,3 +49,26 @@ plt.ylabel("")  # los nombres de los deportes ya se explican solos
 # 7. Guardar (antes de mostrar) y mostrar
 plt.savefig("g02_imc_deporte.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+### --- GRAFICA #3 ---
+
+# 1. Contar registros con medalla por región y quedarnos con las 10 primeras
+top = (df_fusion.groupby("region")["Medalla"]   # agrupar por región, tomar la columna Medalla
+       .sum()                                    # sumar los 1 = registros con medalla
+       .sort_values(ascending=False)             # de mayor a menor
+       .head(10))                                # solo las 10 primeras
+
+# 2. Crear el lienzo
+plt.figure(figsize=(8, 4.5))
+
+# 3. Barras horizontales: valores en x, nombres de región en y
+sns.barplot(x=top.values, y=top.index, color="#4c72b0")
+
+# 4. Títulos y ejes
+plt.title("10 regiones con más registros con medalla")
+plt.xlabel("Registros con medalla")
+plt.ylabel("")
+
+# 5. Guardar (antes de mostrar) y mostrar
+plt.savefig("g03_top_regiones.png", dpi=150, bbox_inches="tight")
+plt.show()
