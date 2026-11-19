@@ -1,0 +1,25 @@
+﻿Sex;grupo_etario;Registro_fisico;Resultado;Conteo;Porcentaje
+F;Jóvenes adultos;Con estatura y peso;Con medalla;9263;14.97
+F;Jóvenes adultos;Con estatura y peso;Sin medalla;46992;75.93
+F;Jóvenes adultos;Sin estatura o peso;Con medalla;688;1.11
+F;Jóvenes adultos;Sin estatura o peso;Sin medalla;4946;7.99
+F;Mayores;Con estatura y peso;Con medalla;339;11.8
+F;Mayores;Con estatura y peso;Sin medalla;2068;71.98
+F;Mayores;Sin estatura o peso;Con medalla;59;2.05
+F;Mayores;Sin estatura o peso;Sin medalla;407;14.17
+F;Menores;Con estatura y peso;Con medalla;748;8.01
+F;Menores;Con estatura y peso;Sin medalla;7301;78.2
+F;Menores;Sin estatura o peso;Con medalla;139;1.49
+F;Menores;Sin estatura o peso;Sin medalla;1148;12.3
+M;Jóvenes adultos;Con estatura y peso;Con medalla;18663;11.13
+M;Jóvenes adultos;Con estatura y peso;Sin medalla;110248;65.73
+M;Jóvenes adultos;Sin estatura o peso;Con medalla;6452;3.85
+M;Jóvenes adultos;Sin estatura o peso;Sin medalla;32365;19.3
+M;Mayores;Con estatura y peso;Con medalla;1015;6.1
+M;Mayores;Con estatura y peso;Sin medalla;7287;43.78
+M;Mayores;Sin estatura o peso;Con medalla;1393;8.37
+M;Mayores;Sin estatura o peso;Sin medalla;6949;41.75
+M;Menores;Con estatura y peso;Con medalla;153;4.82
+M;Menores;Con estatura y peso;Sin medalla;2088;65.83
+M;Menores;Sin estatura o peso;Con medalla;139;4.38
+M;Menores;Sin estatura o peso;Sin medalla;792;24.97
