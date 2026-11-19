@@ -50,7 +50,7 @@ plt.ylabel("")  # los nombres de los deportes ya se explican solos
 plt.savefig("g02_imc_deporte.png", dpi=150, bbox_inches="tight")
 plt.show()
 
-### --- GRAFICA #3 ---
+# --- GRAFICA #3 ---
 
 # 1. Contar registros con medalla por región y quedarnos con las 10 primeras
 top = (df_fusion.groupby("region")["Medalla"]   # agrupar por región, tomar la columna Medalla
@@ -71,4 +71,28 @@ plt.ylabel("")
 
 # 5. Guardar (antes de mostrar) y mostrar
 plt.savefig("g03_top_regiones.png", dpi=150, bbox_inches="tight")
+plt.show()
+
+# --- GRAFICA #4 ---
+
+# 1. Tasa de medalla por sexo
+#    mean() sobre una variable 0/1 = proporción de registros con medalla
+t = df_fusion.groupby("Sex")["Medalla"].mean().reset_index()
+
+# 2. Crear el lienzo (pequeño: solo hay 2 barras)
+plt.figure(figsize=(5, 4))
+
+# 3. Barras: una por sexo
+ax = sns.barplot(data=t, x="Sex", y="Medalla")
+
+# 4. Escribir el porcentaje encima de cada barra
+etiquetas = [f"{v*100:.1f}%" for v in t["Medalla"]]
+ax.bar_label(ax.containers[0], labels=etiquetas)
+
+# 5. Títulos y ejes
+plt.title("Tasa de medalla por sexo")
+plt.ylabel("Medallas / participaciones")
+
+# 6. Guardar (antes de mostrar) y mostrar
+plt.savefig("g04_tasa_sexo.png", dpi=150, bbox_inches="tight")
 plt.show()
