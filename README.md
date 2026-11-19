@@ -45,3 +45,5 @@ En este proyecto, se analizan los datos históricos de los Juegos Olímpicos.
 | `NOC` | texto | Código del Comité Olímpico Nacional (llave de unión) |
 | `region` | texto | País / región a la que corresponde el NOC |
 | `notes` | texto | Notas (nombres históricos, territorios, etc.) |
+
+3. * Más sobre el proyecto lo puedes encontrar en la carpeta /docs/informe-final
