@@ -149,3 +149,34 @@ ax.legend(title="Periodo")
 # 6. Guardar (antes de mostrar) y mostrar
 plt.savefig("g08_faltantes_periodo.png", dpi=150, bbox_inches="tight")
 plt.show()
+
+# --- GRAFICA #7 --- 
+
+# 1. Tabla: atletas únicos por año, temporada y sexo
+base = (df_fusion.groupby(["Year", "Season", "Sex"])["ID"]
+        .nunique()                       # contar IDs distintos (atletas únicos)
+        .reset_index(name="Atletas"))    # volver a tabla, con la columna "Atletas"
+
+# 2. Colores y títulos en diccionarios (así el bucle queda limpio)
+colores = {"M": "#1f77b4", "F": "#d62728"}
+titulos = {"Summer": "Juegos de Verano", "Winter": "Juegos de Invierno"}
+
+# 3. Figura con 2 paneles lado a lado
+fig, ejes = plt.subplots(1, 2, figsize=(13, 4.2))
+
+# 4. Dibujar un panel por temporada
+for ax, temporada in zip(ejes, ["Summer", "Winter"]):
+    datos = base[base["Season"] == temporada]          # solo esa temporada
+    sns.lineplot(data=datos, x="Year", y="Atletas", hue="Sex",
+                 marker="o", palette=colores, ax=ax)   # una línea por sexo
+    ax.set_title(titulos[temporada])
+    ax.set_xlabel("Año")
+    ax.set_ylabel("Atletas únicos")
+
+# 5. Título general y ajuste de espacios
+fig.suptitle("Participación por edición y sexo", y=1.02, fontsize=13)
+plt.tight_layout()
+
+# 6. Guardar (antes de mostrar) y mostrar
+plt.savefig("g07_participacion_anio_sexo.png", dpi=150, bbox_inches="tight")
+plt.show()
